@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(17, 14, 14);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 350px;
+    height: 450px;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 350px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+        -15px -15px 30px rgb(60, 60, 60);
+    padding: 20px 30px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.title {
+    font-size: 28px;
+    color: rgb(6, 216, 253);
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: rgb(6, 216, 253);
+}
+
+.title::before {
+    width: 18px;
+    height: 18px;
+    background-color: rgb(6, 216, 253);
+}
+
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+.form label .input+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown+span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus+span,
+.form label .input:valid+span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form label .input:valid+span {
+    color: green;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.3em 0.8em 0.9em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(to right, #06e7f7, #066875, #2b768d);
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+
+button .fa {
+    margin-right: 10px;
+    transform: rotate(5deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+button span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    font-size: 20px;
+}
+
+button:hover{
+    transform: scale(.90);
+}
+
+button:hover .fa {
+    transform: translateX(5px) rotate(45deg);
+}
+
+button:hover span {
+    transform: translateX(7px);
+}
